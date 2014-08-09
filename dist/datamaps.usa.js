@@ -83,8 +83,8 @@
       projection = d3.geo.conicConformal()
       .rotate([-120, 0])
       .center([0, 38])
-      .parallels([29.5, 45.5]).scale(1000)
-        .translate([width / 2, height / 2]).precision(.1);
+      .parallels([15.5, 55]).scale(1000)
+        .translate([width / 2, height / 3 + 20]).precision(.1);
     }
 
     path = d3.geo.path()
