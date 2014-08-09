@@ -72,3 +72,11 @@ cp afghan.json DATAMAPS_DIR/src/js/data/afghan.json
   Datamap.prototype.afghanTopo = '__AFGHAN__';
 
 ```
+
+### Build
+
+Then run the command. You will then find your map in dist/datamaps.afghan.js and dist/datamaps.afghan.min.js
+
+```
+grunt build
+```
