@@ -19,6 +19,14 @@ module.exports = function(grunt) {
           to: '<%= grunt.file.read("src/js/data/usa.topo.json") %>'
         }]
       },
+      china: {
+        src: ['src/js/datamaps.js'],
+        dest: 'src/rel/datamaps.china.js',
+        replacements: [{
+          from: '\'__CHINA__\'',
+          to: '<%= grunt.file.read("src/js/data/china.topo.json") %>'
+        }]
+      },
       all: {
         src: ['src/js/datamaps.js'],
         dest: 'src/rel/datamaps.all.js',
@@ -28,6 +36,9 @@ module.exports = function(grunt) {
         }, {
           from: '\'__WORLD__\'',
           to: '<%= grunt.file.read("src/js/data/world.topo.json") %>'
+        }, {
+          from: '\'__CHINA__\'',
+          to: '<%= grunt.file.read("src/js/data/china.topo.json") %>'
         }]
       }
     },
@@ -42,6 +53,7 @@ module.exports = function(grunt) {
         files: {
           'src/rel/datamaps.world.min.js': ['src/rel/datamaps.world.js'],
           'src/rel/datamaps.usa.min.js': ['src/rel/datamaps.usa.js'],
+          'src/rel/datamaps.china.min.js': ['src/rel/datamaps.china.js'],
           'src/rel/datamaps.all.min.js': ['src/rel/datamaps.all.js'],
           'src/rel/datamaps.none.min.js': ['src/js/datamaps.js']
         }

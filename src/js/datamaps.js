@@ -79,6 +79,12 @@
       projection = d3.geo[options.projection]()
         .scale((width + 1) / 2 / Math.PI)
         .translate([width / 2, height / (options.projection === "mercator" ? 1.45 : 1.8)]);
+    }else if ( options.scope === 'china' ) {
+      projection = d3.geo.conicConformal()
+      .rotate([-120, 0])
+      .center([0, 38])
+      .parallels([29.5, 45.5]).scale(1000)
+        .translate([width / 2, height / 2]).precision(.1);
     }
 
     path = d3.geo.path()
@@ -547,6 +553,7 @@
   ***************************************/
   Datamap.prototype.worldTopo = '__WORLD__';
   Datamap.prototype.usaTopo = '__USA__';
+  Datamap.prototype.chinaTopo = '__CHINA__';
 
   /**************************************
                 Utilities
